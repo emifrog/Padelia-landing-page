@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Padelia</title>
+  <meta name="description" content="Contacte l'équipe Padelia. Une question, un partenariat ou un bug à signaler ? On te répond rapidement.">
+
+  <link rel="canonical" href="https://padelia.app/contact">
+  <link rel="icon" href="images/logo-small.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ─── Contact Page Specific ─── */
+    .contact-hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .contact-hero .hero-glow {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(62,175,75,0.04), transparent);
+      filter: blur(80px);
+    }
+    .contact-hero .section-header {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* Info cards */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-info-card {
+      background: var(--navy-light);
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
+    }
+    .contact-info-card:hover {
+      border-color: rgba(62,175,75,0.2);
+      transform: translateY(-2px);
+    }
+    .contact-info-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(62,175,75,0.13), rgba(200,220,56,0.07));
+      border: 1px solid rgba(62,175,75,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .contact-info-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-info-card p {
+      font-size: 15px;
+      color: var(--gray400);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .contact-info-card a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .contact-info-card a:hover {
+      color: var(--green-light);
+    }
+
+    /* Form */
+    .contact-form-card {
+      background: var(--navy-light);
+      border-radius: 24px;
+      padding: 36px 32px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray300);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray500);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-group select option {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-form .cta-btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 16px;
+    }
+    .form-success.show {
+      display: block;
+    }
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(62,175,75,0.13);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .form-success h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 15px;
+      color: var(--gray400);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .contact-hero {
+        padding: 130px 20px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-logo">
+        <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <img src="images/logo-small.png" alt="Padelia">
+          <span>PADELIA</span>
+        </a>
+      </div>
+      <div class="nav-desktop">
+        <div class="nav-links">
+          <a href="index.html#features">Fonctionnalités</a>
+          <a href="index.html#how">Comment ça marche</a>
+          <a href="index.html#pricing">Tarifs</a>
+          <a href="index.html#testimonials">Témoignages</a>
+          <a href="contact.html" style="color:var(--white);">Contact</a>
+        </div>
+        <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-cta">Essayer gratuitement</a>
+      </div>
+      <button class="nav-mobile-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="mobile-menu-links">
+      <a href="index.html#features">Fonctionnalités</a>
+      <a href="index.html#how">Comment ça marche</a>
+      <a href="index.html#pricing">Tarifs</a>
+      <a href="index.html#testimonials">Témoignages</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-menu-spacer"></div>
+    <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn" style="text-align:center;">
+      Essayer gratuitement
+    </a>
+  </div>
+
+  <main>
+    <!-- ══ CONTACT HERO ══ -->
+    <section class="contact-hero">
+      <div class="hero-glow"></div>
+      <div class="section-header reveal">
+        <span class="section-tag green">Contact</span>
+        <h1 class="heading-lg">Une question ?<br><span class="accent-green">On est là.</span></h1>
+        <p>Partenariat, bug, suggestion ou simple question — notre équipe te répond sous 24h.</p>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT CONTENT ══ -->
+    <div class="contact-container">
+      <!-- Left: Info Cards -->
+      <div class="contact-info">
+        <div class="contact-info-card reveal">
+          <div class="contact-info-card-icon">📧</div>
+          <h3>Email</h3>
+          <p>Pour toute demande générale :<br><a href="mailto:contact@padelia.app">contact@padelia.app</a></p>
+        </div>
+        <div class="contact-info-card reveal" data-delay="100">
+          <div class="contact-info-card-icon">🤝</div>
+          <h3>Partenariats</h3>
+          <p>Tu es un club ou une marque ?<br><a href="mailto:partenariats@padelia.app">partenariats@padelia.app</a></p>
+        </div>
+        <div class="contact-info-card reveal" data-delay="200">
+          <div class="contact-info-card-icon">🐛</div>
+          <h3>Signaler un bug</h3>
+          <p>Un souci technique ? Aide-nous à améliorer l'app en nous le signalant via le formulaire.</p>
+        </div>
+        <div class="contact-info-card reveal" data-delay="300">
+          <div class="contact-info-card-icon">📍</div>
+          <h3>Localisation</h3>
+          <p>Nice, France<br><span style="color:var(--gray500);font-size:13px;">100% remote — équipe distribuée</span></p>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="contact-form-card reveal" data-delay="150">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Ton nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="ton@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Choisis un sujet</option>
+              <option value="general">Question générale</option>
+              <option value="bug">Signaler un bug</option>
+              <option value="partenariat">Partenariat / Club</option>
+              <option value="suggestion">Suggestion / Idée</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Décris ta demande..." required></textarea>
+          </div>
+          <button type="submit" class="cta-btn">Envoyer le message</button>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✅</div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour ton message. Notre équipe te répondra sous 24h.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <img src="images/logo-small.png" alt="Padelia" loading="lazy" decoding="async">
+            <span>PADELIA</span>
+          </div>
+          <p>L'application de padel qui connecte les joueurs par niveau, position et style de jeu. Développée à Nice, France.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Produit</div>
+          <div class="footer-col-links">
+            <a href="index.html#features">Fonctionnalités</a>
+            <a href="index.html#pricing">Tarifs</a>
+            <a href="#">Beta</a>
+            <a href="#">Roadmap</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Communauté</div>
+          <div class="footer-col-links">
+            <a href="#">Blog</a>
+            <a href="#">Discord</a>
+            <a href="#">Instagram</a>
+            <a href="#">Ambassadeurs</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Légal</div>
+          <div class="footer-col-links">
+            <a href="#">CGU</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Padelia. Tous droits réservés. Fait avec 💚 à Nice.</p>
+        <div class="footer-socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Contact form handling
+    (function() {
+      var form = document.getElementById("contact-form");
+      var success = document.getElementById("form-success");
+      if (!form) return;
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        var name = form.querySelector("#name").value.trim();
+        var email = form.querySelector("#email").value.trim();
+        var subject = form.querySelector("#subject").value;
+        var message = form.querySelector("#message").value.trim();
+
+        if (!name || !email || !subject || !message) return;
+
+        // Hide form, show success
+        form.style.display = "none";
+        success.classList.add("show");
+      });
+    })();
+  </script>
+</body>
+</html>

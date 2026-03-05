@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padelia — Joue mieux, plus souvent</title>
+  <meta name="description" content="L'app qui connecte les joueurs de padel par niveau, position et style de jeu. Trouve ton partenaire idéal, organise des matchs et progresse.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Padelia — Joue mieux, plus souvent">
+  <meta property="og:description" content="L'app qui connecte les joueurs de padel par niveau, position et style de jeu. Trouve ton partenaire idéal, organise des matchs et progresse.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://padelia.app">
+  <meta property="og:image" content="https://padelia.app/images/cover.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Padelia — Joue mieux, plus souvent">
+  <meta name="twitter:description" content="L'app qui connecte les joueurs de padel par niveau, position et style de jeu. Trouve ton partenaire idéal, organise des matchs et progresse.">
+  <meta name="twitter:image" content="https://padelia.app/images/cover.jpg">
+
+  <link rel="canonical" href="https://padelia.app">
+  <link rel="icon" href="images/logo-small.png">
+
+  <!-- Fonts (non-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-logo">
+        <img src="images/logo-small.png" alt="Padelia">
+        <span>PADELIA</span>
+      </div>
+      <div class="nav-desktop">
+        <div class="nav-links">
+          <a href="#features">Fonctionnalités</a>
+          <a href="#how">Comment ça marche</a>
+          <a href="#pricing">Tarifs</a>
+          <a href="#testimonials">Témoignages</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-cta">Essayer gratuitement</a>
+      </div>
+      <button class="nav-mobile-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="mobile-menu-links">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#how">Comment ça marche</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#testimonials">Témoignages</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-menu-spacer"></div>
+    <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn" style="text-align:center;">
+      Essayer gratuitement →
+    </a>
+  </div>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+      <!-- Cover photo background -->
+      <div class="hero-bg">
+        <img
+          src="images/cover.jpg"
+          alt="Joueurs de padel en action"
+          fetchpriority="high">
+      </div>
+      <!-- Gradient overlays -->
+      <div class="hero-overlay">
+        <div class="hero-overlay-gradient"></div>
+        <div class="hero-overlay-bottom"></div>
+      </div>
+      <!-- Green glow -->
+      <div class="hero-glow"></div>
+
+      <div class="section-pad hero-content">
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Beta ouverte — Rejoins les premiers joueurs</span>
+          </div>
+
+          <h1 class="heading-xl">
+            Joue mieux,<br>
+            <span class="accent">plus souvent</span>,<br>
+            avec les bons<br>
+            partenaires.
+          </h1>
+
+          <p class="hero-desc">
+            L'app qui connecte les joueurs de padel par niveau, position et style de jeu.
+            Trouve ton partenaire idéal, organise des matchs, et progresse chaque semaine.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="cta-btn">
+              Commencer gratuitement →
+            </a>
+            <a href="#how" class="cta-secondary">
+              Voir comment ça marche
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div><span class="value">100%</span> <span class="label">Gratuit</span></div>
+            <div><span class="value">📱</span> <span class="label">PWA mobile</span></div>
+            <div><span class="value">🇫🇷</span> <span class="label">Made in France</span></div>
+          </div>
+        </div>
+
+        <!-- Right: Phone Mockups -->
+        <div class="hero-phones">
+          <div class="hero-phone-main">
+            <!-- Phone Mockup: Home Screen -->
+            <div class="phone-mockup">
+              <div class="phone-notch"><div class="phone-notch-camera"></div></div>
+              <div class="phone-screen">
+                <div class="phone-screen-content">
+                  <div class="phone-header">
+                    <img src="images/logo-small.png" alt="P" loading="lazy" decoding="async">
+                    <span>PADELIA</span>
+                  </div>
+                  <div class="phone-section-title">🏓 Mes prochains matchs</div>
+                  <!-- Match 1 -->
+                  <div class="match-card">
+                    <div class="match-card-circle"></div>
+                    <span class="match-badge amical">Amical</span>
+                    <div class="match-title">Match amical</div>
+                    <div class="match-info">🕐 Aujourd'hui 18:30 · 📍 Padel Club Nice</div>
+                    <div class="match-footer">
+                      <div class="match-avatars">
+                        <div class="match-avatar">🧑‍🧔</div>
+                        <div class="match-avatar">👩</div>
+                        <div class="match-avatar">👨‍🦰</div>
+                      </div>
+                      <span class="match-slots">3/4</span>
+                    </div>
+                  </div>
+                  <!-- Match 2 -->
+                  <div class="match-card">
+                    <div class="match-card-circle"></div>
+                    <span class="match-badge classe">Classé</span>
+                    <div class="match-title">Double classé</div>
+                    <div class="match-info">🕐 Aujourd'hui 20:00 · 📍 All In Padel</div>
+                    <div class="match-footer">
+                      <div class="match-avatars">
+                        <div class="match-avatar">🧑‍🧔</div>
+                        <div class="match-avatar">👩</div>
+                      </div>
+                      <span class="match-slots">4/4</span>
+                    </div>
+                  </div>
+                  <div class="phone-section-title" style="margin-top:4px;">⚡ Joueurs compatibles</div>
+                  <div class="players-grid">
+                    <div class="player-card">
+                      <div class="player-card-emoji">🧑‍🧔</div>
+                      <div class="player-card-name">Lucas M.</div>
+                      <span class="player-card-score">92%</span>
+                    </div>
+                    <div class="player-card">
+                      <div class="player-card-emoji">👩</div>
+                      <div class="player-card-name">Sophie B.</div>
+                      <span class="player-card-score">87%</span>
+                    </div>
+                    <div class="player-card">
+                      <div class="player-card-emoji">👨‍🦰</div>
+                      <div class="player-card-name">Marc D.</div>
+                      <span class="player-card-score">84%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-navbar">
+                  <div class="phone-navbar-item active">🏠<div class="indicator"></div></div>
+                  <div class="phone-navbar-item">⚔️</div>
+                  <div class="phone-navbar-item">🗺️</div>
+                  <div class="phone-navbar-item">💬</div>
+                  <div class="phone-navbar-item">👤</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-phone-secondary">
+            <!-- Phone Mockup: Stats Screen -->
+            <div class="phone-mockup">
+              <div class="phone-notch"><div class="phone-notch-camera"></div></div>
+              <div class="phone-screen">
+                <div class="phone-screen-content">
+                  <!-- Stats Header -->
+                  <div class="stats-header">
+                    <div class="stats-header-circle"></div>
+                    <div class="stats-profile">
+                      <div class="stats-avatar">👨‍💻</div>
+                      <div>
+                        <div class="stats-name">Xavier</div>
+                        <div class="stats-handle">@xavier_padel · Nice</div>
+                      </div>
+                    </div>
+                    <div class="stats-grid">
+                      <div class="stats-grid-item">
+                        <div class="stats-grid-value">47</div>
+                        <div class="stats-grid-label">Matchs</div>
+                      </div>
+                      <div class="stats-grid-item">
+                        <div class="stats-grid-value">68%</div>
+                        <div class="stats-grid-label">Win</div>
+                      </div>
+                      <div class="stats-grid-item">
+                        <div class="stats-grid-value">3</div>
+                        <div class="stats-grid-label">Série 🔥</div>
+                      </div>
+                      <div class="stats-grid-item">
+                        <div class="stats-grid-value">5.2</div>
+                        <div class="stats-grid-label">Niveau</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Progression Chart -->
+                  <div class="stats-card">
+                    <div class="stats-card-title">📈 Progression du niveau</div>
+                    <svg class="stats-chart" viewBox="0 0 200 50">
+                      <defs>
+                        <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#3EAF4B" stop-opacity="0.3"/>
+                          <stop offset="100%" stop-color="#3EAF4B" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <polyline fill="none" stroke="#3EAF4B" stroke-width="2" stroke-linecap="round" points="0,40 20,38 40,35 60,32 80,30 100,31 120,28 140,24 160,20 180,16 200,12"/>
+                      <polygon fill="url(#sg)" points="0,50 0,40 20,38 40,35 60,32 80,30 100,31 120,28 140,24 160,20 180,16 200,12 200,50"/>
+                    </svg>
+                  </div>
+                  <!-- Best Partners -->
+                  <div class="stats-card">
+                    <div class="stats-card-title">🤝 Meilleurs partenaires</div>
+                    <div class="partner-row">
+                      <div class="partner-emoji">🧑‍🧔</div>
+                      <div class="partner-info">
+                        <div class="partner-name">Lucas M.</div>
+                        <div class="partner-matches">12 matchs</div>
+                      </div>
+                      <span class="partner-winrate high">75%</span>
+                    </div>
+                    <div class="partner-row">
+                      <div class="partner-emoji">👩</div>
+                      <div class="partner-info">
+                        <div class="partner-name">Sophie B.</div>
+                        <div class="partner-matches">8 matchs</div>
+                      </div>
+                      <span class="partner-winrate mid">62%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-navbar">
+                  <div class="phone-navbar-item">🏠</div>
+                  <div class="phone-navbar-item">⚔️</div>
+                  <div class="phone-navbar-item">🗺️</div>
+                  <div class="phone-navbar-item">💬</div>
+                  <div class="phone-navbar-item active">👤<div class="indicator"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span>Découvrir</span>
+        <div class="scroll-indicator-pill">
+          <div class="scroll-indicator-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SOCIAL PROOF BAR ══ -->
+    <section class="social-proof">
+      <div class="social-proof-inner">
+        <div class="grid-4">
+          <div class="stat-counter" data-end="500" data-suffix="+" data-delay="0">
+            <div class="number">0+</div>
+            <div class="label">Joueurs inscrits</div>
+          </div>
+          <div class="stat-counter" data-end="1200" data-suffix="+" data-delay="150">
+            <div class="number">0+</div>
+            <div class="label">Matchs organisés</div>
+          </div>
+          <div class="stat-counter" data-end="50" data-suffix="+" data-delay="300">
+            <div class="number">0+</div>
+            <div class="label">Clubs partenaires</div>
+          </div>
+          <div class="stat-counter" data-end="98" data-suffix="%" data-delay="0">
+            <div class="number">0%</div>
+            <div class="label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FEATURES ══ -->
+    <section id="features" class="features-section">
+      <div class="section-pad">
+        <div class="section-header reveal">
+          <span class="section-tag green">Fonctionnalités</span>
+          <h2 class="heading-lg">Tout ce qu'il faut pour<br><span class="accent-green">dominer le terrain</span></h2>
+          <p>Padelia réunit matching intelligent, organisation de matchs, chat, stats et bien plus — le tout dans une seule app.</p>
+        </div>
+        <div class="grid-3">
+          <div class="reveal">
+            <div class="feature-card">
+              <div class="feature-card-icon">🎯</div>
+              <h3>Matching intelligent</h3>
+              <p>Notre algorithme analyse ton niveau, ta position, ton style de jeu, ta fiabilité et ta localisation pour trouver le partenaire parfait.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="100">
+            <div class="feature-card">
+              <div class="feature-card-icon">📊</div>
+              <h3>Stats détaillées</h3>
+              <p>Suis ta progression Elo, ton win rate, tes meilleurs partenaires et ton évolution mois après mois avec des graphiques détaillés.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="200">
+            <div class="feature-card">
+              <div class="feature-card-icon">🏆</div>
+              <h3>Tournois & brackets</h3>
+              <p>Crée ou rejoins des tournois avec génération automatique de tableaux, gestion des équipes et suivi des scores en live.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="100">
+            <div class="feature-card">
+              <div class="feature-card-icon">💬</div>
+              <h3>Chat temps réel</h3>
+              <p>Discute en direct avec tes partenaires, tes groupes et les participants de tes matchs. Notifications push incluses.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="200">
+            <div class="feature-card">
+              <div class="feature-card-icon">🗺️</div>
+              <h3>Carte interactive</h3>
+              <p>Trouve les clubs, matchs ouverts et joueurs autour de toi sur une carte interactive avec filtres par distance et niveau.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="300">
+            <div class="feature-card">
+              <div class="feature-card-icon">🏢</div>
+              <h3>Réservation clubs</h3>
+              <p>Réserve ton terrain directement dans l'app, partage les coûts entre joueurs et gère tes réservations passées.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ HOW IT WORKS ══ -->
+    <section id="how" class="how-section">
+      <div class="section-pad" style="position:relative;">
+        <div class="section-header reveal">
+          <span class="section-tag lime">Comment ça marche</span>
+          <h2 class="heading-lg">Prêt à jouer<br><span class="accent-lime">en 3 étapes</span></h2>
+        </div>
+        <div class="grid-3" style="gap:40px;">
+          <div class="reveal">
+            <div class="how-step">
+              <div class="how-step-number">01</div>
+              <div class="how-step-icon">📝</div>
+              <h3 class="heading-md">Crée ton profil</h3>
+              <p>Renseigne ton niveau, ta position préférée, ton style de jeu et tes disponibilités. L'algorithme fait le reste.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="150">
+            <div class="how-step">
+              <div class="how-step-number">02</div>
+              <div class="how-step-icon">⚡</div>
+              <h3 class="heading-md">Trouve ton match</h3>
+              <p>Parcours les joueurs compatibles, rejoins un match existant ou crée le tien. L'app te suggère les meilleurs partenaires.</p>
+            </div>
+          </div>
+          <div class="reveal" data-delay="300">
+            <div class="how-step">
+              <div class="how-step-number">03</div>
+              <div class="how-step-icon">🚀</div>
+              <h3 class="heading-md">Joue et progresse</h3>
+              <p>Après chaque match, entre tes scores, évalue tes partenaires et regarde ton niveau évoluer en temps réel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ APP SHOWCASE ══ -->
+    <section class="showcase-section">
+      <div class="section-header reveal" style="max-width:600px;margin:0 auto 64px;">
+        <span class="section-tag green">L'application</span>
+        <h2 class="heading-lg">Conçue pour les joueurs,<br><span class="accent-green">par des joueurs</span></h2>
+      </div>
+      <div class="reveal" data-delay="200">
+        <div class="phones-row">
+          <!-- Large Phone Mockup: Home -->
+          <div class="phone-mockup large">
+            <div class="phone-notch"><div class="phone-notch-camera"></div></div>
+            <div class="phone-screen">
+              <div class="phone-screen-content">
+                <div class="phone-header">
+                  <img src="images/logo-small.png" alt="P" loading="lazy" decoding="async">
+                  <span>PADELIA</span>
+                </div>
+                <div class="phone-section-title">🏓 Mes prochains matchs</div>
+                <div class="match-card">
+                  <div class="match-card-circle"></div>
+                  <span class="match-badge amical">Amical</span>
+                  <div class="match-title">Match amical</div>
+                  <div class="match-info">🕐 Aujourd'hui 18:30 · 📍 Padel Club Nice</div>
+                  <div class="match-footer">
+                    <div class="match-avatars">
+                      <div class="match-avatar">🧑‍🧔</div>
+                      <div class="match-avatar">👩</div>
+                      <div class="match-avatar">👨‍🦰</div>
+                    </div>
+                    <span class="match-slots">3/4</span>
+                  </div>
+                </div>
+                <div class="match-card">
+                  <div class="match-card-circle"></div>
+                  <span class="match-badge classe">Classé</span>
+                  <div class="match-title">Double classé</div>
+                  <div class="match-info">🕐 Aujourd'hui 20:00 · 📍 All In Padel</div>
+                  <div class="match-footer">
+                    <div class="match-avatars">
+                      <div class="match-avatar">🧑‍🧔</div>
+                      <div class="match-avatar">👩</div>
+                    </div>
+                    <span class="match-slots">4/4</span>
+                  </div>
+                </div>
+                <div class="phone-section-title" style="margin-top:4px;">⚡ Joueurs compatibles</div>
+                <div class="players-grid">
+                  <div class="player-card">
+                    <div class="player-card-emoji">🧑‍🧔</div>
+                    <div class="player-card-name">Lucas M.</div>
+                    <span class="player-card-score">92%</span>
+                  </div>
+                  <div class="player-card">
+                    <div class="player-card-emoji">👩</div>
+                    <div class="player-card-name">Sophie B.</div>
+                    <span class="player-card-score">87%</span>
+                  </div>
+                  <div class="player-card">
+                    <div class="player-card-emoji">👨‍🦰</div>
+                    <div class="player-card-name">Marc D.</div>
+                    <span class="player-card-score">84%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="phone-navbar">
+                <div class="phone-navbar-item active">🏠<div class="indicator"></div></div>
+                <div class="phone-navbar-item">⚔️</div>
+                <div class="phone-navbar-item">🗺️</div>
+                <div class="phone-navbar-item">💬</div>
+                <div class="phone-navbar-item">👤</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRICING ══ -->
+    <section id="pricing" class="pricing-section">
+      <div class="section-pad">
+        <div class="section-header reveal">
+          <span class="section-tag green">Tarifs</span>
+          <h2 class="heading-lg">Simple,<br><span class="accent-green">transparent</span></h2>
+          <p>Commence gratuitement. Passe Premium quand tu veux aller plus loin.</p>
+        </div>
+        <div class="grid-2" style="max-width:800px;margin:0 auto;gap:28px;">
+          <!-- Free Plan -->
+          <div class="reveal">
+            <div class="pricing-card">
+              <div class="pricing-name">Gratuit</div>
+              <div class="pricing-price">
+                <span class="amount">0€</span>
+              </div>
+              <div class="pricing-divider"></div>
+              <div class="pricing-features">
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Profil joueur complet</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">3 matchs / mois</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Matching de base</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Chat illimité</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon excluded">
+                    <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#6B7280" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </div>
+                  <span class="excluded">Stats avancées</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon excluded">
+                    <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#6B7280" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </div>
+                  <span class="excluded">Matching illimité</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon excluded">
+                    <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="#6B7280" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  </div>
+                  <span class="excluded">Classements locaux</span>
+                </div>
+              </div>
+              <button class="pricing-btn secondary">Commencer gratuitement</button>
+            </div>
+          </div>
+          <!-- Premium Plan -->
+          <div class="reveal" data-delay="150">
+            <div class="pricing-card highlighted">
+              <div class="pricing-ribbon">POPULAIRE</div>
+              <div class="pricing-name">Premium</div>
+              <div class="pricing-price">
+                <span class="amount">5,99€</span>
+                <span class="period">/mois</span>
+              </div>
+              <div class="pricing-divider"></div>
+              <div class="pricing-features">
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Tout le plan Gratuit</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Matchs illimités</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Matching intelligent complet</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Stats avancées & graphiques</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Classements locaux & nationaux</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Badge Premium visible</span>
+                </div>
+                <div class="pricing-feature">
+                  <div class="pricing-feature-icon included">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#3EAF4B" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <span class="included">Support prioritaire</span>
+                </div>
+              </div>
+              <button class="pricing-btn primary">Commencer l'essai gratuit</button>
+            </div>
+          </div>
+        </div>
+        <div class="reveal" data-delay="300">
+          <p class="pricing-note">🎓 -50% pour les étudiants · 📦 Offre annuelle à 49,99€ (-30%)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TESTIMONIALS ══ -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-pad">
+        <div class="section-header reveal">
+          <span class="section-tag lime">Témoignages</span>
+          <h2 class="heading-lg">Ce qu'en disent<br><span class="accent-lime">les joueurs</span></h2>
+        </div>
+        <div class="grid-3">
+          <div class="reveal">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="testimonial-text">"Enfin une app de padel qui marche ! Le matching est bluffant, j'ai trouvé des partenaires de mon niveau en 2 minutes."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">🧑‍🧔</div>
+                <div>
+                  <div class="testimonial-name">Lucas M.</div>
+                  <div class="testimonial-role">Joueur intermédiaire · Nice</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal" data-delay="100">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="testimonial-text">"Le système de stats me motive à progresser. Voir mon Elo monter après chaque victoire, c'est addictif."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">👩</div>
+                <div>
+                  <div class="testimonial-name">Sophie B.</div>
+                  <div class="testimonial-role">Compétitrice · Antibes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal" data-delay="200">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="16" height="16" fill="#C8DC38" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="testimonial-text">"J'utilise Padelia pour organiser les matchs de notre groupe de 15 joueurs. Le chat + la création de match, c'est ultra fluide."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">👨‍🦰</div>
+                <div>
+                  <div class="testimonial-name">Marc D.</div>
+                  <div class="testimonial-role">Organisateur · Cannes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FINAL CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-glow"></div>
+      <div class="section-pad cta-content">
+        <div class="reveal">
+          <img src="images/padelia-logo.png" alt="Padelia" loading="lazy" decoding="async">
+        </div>
+        <div class="reveal" data-delay="100">
+          <h2 class="heading-xl">
+            Prêt à trouver ton<br><span class="accent">partenaire idéal</span> ?
+          </h2>
+        </div>
+        <div class="reveal" data-delay="200">
+          <p class="cta-desc">
+            Rejoins la communauté Padelia et commence à jouer avec des joueurs de ton niveau dès aujourd'hui.
+          </p>
+        </div>
+        <div class="reveal cta-buttons" data-delay="300">
+          <a href="https://padelia-beta.vercel.app/register" target="_blank" rel="noopener noreferrer" class="cta-btn">
+            Créer mon compte gratuit →
+          </a>
+        </div>
+        <div class="reveal" data-delay="400">
+          <p class="cta-note">Aucune carte bancaire requise · Inscription en 30 secondes</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <img src="images/logo-small.png" alt="Padelia" loading="lazy" decoding="async">
+            <span>PADELIA</span>
+          </div>
+          <p>L'application de padel qui connecte les joueurs par niveau, position et style de jeu. Développée à Nice, France.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Produit</div>
+          <div class="footer-col-links">
+            <a href="#features">Fonctionnalités</a>
+            <a href="#pricing">Tarifs</a>
+            <a href="#">Beta</a>
+            <a href="#">Roadmap</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Communauté</div>
+          <div class="footer-col-links">
+            <a href="#">Blog</a>
+            <a href="#">Discord</a>
+            <a href="#">Instagram</a>
+            <a href="#">Ambassadeurs</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Légal</div>
+          <div class="footer-col-links">
+            <a href="#">CGU</a>
+            <a href="#">Confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Padelia. Tous droits réservés. Fait avec 💚 à Nice.</p>
+        <div class="footer-socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
