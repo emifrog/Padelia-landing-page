@@ -348,12 +348,13 @@
             <label for="subject">Sujet</label>
             <select id="subject" name="subject" required>
               <option value="" disabled selected>Choisis un sujet</option>
-              <option value="general">Question générale</option>
-              <option value="demo">Demande de démo</option>
-              <option value="bug">Signaler un bug</option>
-              <option value="partenariat">Partenariat / Club</option>
-              <option value="suggestion">Suggestion / Idée</option>
-              <option value="autre">Autre</option>
+              <!-- The value becomes the subject line of the Netlify notification email -->
+              <option value="[Padelia] Question générale" data-key="general">Question générale</option>
+              <option value="[Padelia] Demande de démo" data-key="demo">Demande de démo</option>
+              <option value="[Padelia] Signaler un bug" data-key="bug">Signaler un bug</option>
+              <option value="[Padelia] Partenariat / Club" data-key="partenariat">Partenariat / Club</option>
+              <option value="[Padelia] Suggestion / Idée" data-key="suggestion">Suggestion / Idée</option>
+              <option value="[Padelia] Autre" data-key="autre">Autre</option>
             </select>
           </div>
           <div class="form-group">
@@ -440,8 +441,8 @@
       var subjectField = form.querySelector("#subject");
       if (wanted) {
         for (var i = 0; i < subjectField.options.length; i++) {
-          if (subjectField.options[i].value === wanted && !subjectField.options[i].disabled) {
-            subjectField.value = wanted;
+          if (subjectField.options[i].getAttribute("data-key") === wanted) {
+            subjectField.selectedIndex = i;
             break;
           }
         }
