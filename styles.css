@@ -419,6 +419,9 @@ body { overflow-x: hidden; font-family: 'DM Sans', 'Segoe UI', sans-serif; backg
   font-size: 13px;
   color: var(--gray400);
 }
+/* Pricing line: own row, so the two short badges stay on one line below it */
+.hero-badges { flex-wrap: wrap; row-gap: 14px; }
+.hero-badges > .hero-badges-wide { flex-basis: 100%; }
 
 /* Hero Phones */
 .hero-phones {
@@ -772,6 +775,19 @@ body { overflow-x: hidden; font-family: 'DM Sans', 'Segoe UI', sans-serif; backg
 .partner-winrate.mid {
   color: var(--yellow);
   background: rgba(232,212,77,0.08);
+}
+
+/* Sample-data caption under each phone mockup (absolute: no layout shift) */
+.mockup-note {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gray400);
+  white-space: nowrap;
 }
 
 /* ─── Social Proof Bar ─── */
@@ -1240,6 +1256,20 @@ body { overflow-x: hidden; font-family: 'DM Sans', 'Segoe UI', sans-serif; backg
 }
 .footer-socials a:hover { color: var(--gray300); }
 
+/* Publisher identification (legal notice) */
+.footer-publisher {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gray400);
+}
+.footer-publisher a {
+  color: inherit;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.footer-publisher a:hover { color: var(--gray300); }
+
 /* ─── Back to Top Button ─── */
 .back-to-top {
   position: fixed;
@@ -1302,6 +1332,10 @@ button:focus-visible,
   .section-pad { padding: 64px 20px; }
   .phones-row { transform: scale(0.75); }
   .hero-badges { flex-wrap: wrap; gap: 16px; }
+  /* Stacked hero: keep the mockup caption clear of the scroll indicator */
+  .hero-phones { margin-bottom: 44px; }
+  /* Offset the row's scale so the caption stays at 12px */
+  .phones-row .mockup-note { font-size: 16px; margin-top: 16px; }
 }
 
 @media (max-width: 600px) {
@@ -1310,6 +1344,9 @@ button:focus-visible,
 
 @media (max-width: 500px) {
   .phones-row { transform: scale(0.6); gap: 10px; }
+  .phones-row .mockup-note { font-size: 20px; margin-top: 20px; }
+  /* The second hero phone sits mostly behind the first: one caption labels the pair */
+  .hero-phone-secondary .mockup-note { display: none; }
 }
 
 /* ─── Reduced Motion ─── */

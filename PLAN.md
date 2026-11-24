@@ -61,7 +61,7 @@ Cela crée de l'urgence, de l'exclusivité et de l'honnêteté. Tu réintroduira
 | Roadmap | ❌ `#` | → supprimer ou lier à un Notion public |
 | Blog | ❌ `#` | → supprimer jusqu'à avoir du contenu |
 | Discord | ❌ `#` | → supprimer |
-| Instagram | ❌ `#` | → créer `@padelia.app` et lier |
+| Instagram | ❌ `#` | → créer un compte Instagram Padelia et lier |
 | Ambassadeurs | ❌ `#` | → supprimer |
 | CGU | ❌ `#` | → `https://padelia-beta.vercel.app/cgu` |
 | Confidentialité | ❌ `#` | → `https://padelia-beta.vercel.app/confidentialite` |
@@ -75,7 +75,7 @@ Cela crée de l'urgence, de l'exclusivité et de l'honnêteté. Tu réintroduira
 
 ```
 Produit                   Légal                    Contact
-Fonctionnalités           CGU                      contact@padelia.app
+Fonctionnalités           CGU                      xav.robart@gmail.com
 Tarifs                    Confidentialité           Instagram
 Accéder à la beta         Mentions légales
 ```
@@ -132,7 +132,7 @@ fonctionnalités avancées pour les joueurs les plus engagés.
 
 **Corrections par priorité :**
 
-Un domaine propre : achète `padelia.fr` ou `padelia.app` (vérifie la disponibilité). Configure-le sur Netlify. C'est 10-15€/an et le signal de confiance est immédiat.
+Un domaine propre : achète un nom de domaine dédié, par exemple `padelia.fr` (vérifie la disponibilité). Configure-le sur Netlify. C'est 10-15€/an et le signal de confiance est immédiat.
 
 Ajoute les meta OG dans le `<head>` :
 ```html
