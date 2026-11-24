@@ -1,0 +1,5 @@
+# Static site, no build step.
+# Only public/ is deployed. Everything else in the repository (docs/, this file)
+# stays out of the published site.
+[build]
+  publish = "public"

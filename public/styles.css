@@ -1038,6 +1038,9 @@ body { overflow-x: hidden; font-family: 'DM Sans', 'Segoe UI', sans-serif; backg
 .pricing-feature span.excluded { color: var(--gray500); }
 
 .pricing-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
   width: 100%;
   padding: 16px;
   border-radius: 14px;
@@ -1071,6 +1074,9 @@ body { overflow-x: hidden; font-family: 'DM Sans', 'Segoe UI', sans-serif; backg
 
 /* ─── Testimonials ─── */
 .testimonials-section { background: var(--navy-deep); }
+
+/* ─── Demo request ─── */
+.demo-section { background: var(--navy); }
 
 .testimonial-card {
   background: var(--navy-light);
@@ -1317,7 +1323,7 @@ button:focus-visible,
 }
 
 /* Anchor offset for fixed nav */
-#features, #how, #pricing, #testimonials {
+#features, #how, #pricing, #testimonials, #demo-request {
   scroll-margin-top: 96px;
 }
 

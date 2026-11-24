@@ -203,6 +203,34 @@
       line-height: 1.6;
     }
 
+    /* Error message (send failed) */
+    .form-error {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--gray300);
+      background: rgba(232,212,77,0.08);
+      border: 1px solid rgba(232,212,77,0.25);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .form-error a {
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .form-error a:hover {
+      color: var(--green-light);
+    }
+    .contact-form .cta-btn:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none;
+    }
+    /* Arriving from "Demander une démo": keep the form clear of the fixed navbar */
+    #contact-form {
+      scroll-margin-top: 110px;
+    }
+
     @media (max-width: 768px) {
       .contact-container {
         grid-template-columns: 1fr;
@@ -232,7 +260,7 @@
           <a href="index.html#features">Fonctionnalités</a>
           <a href="index.html#how">Comment ça marche</a>
           <a href="index.html#pricing">Tarifs</a>
-          <a href="index.html#testimonials">Témoignages</a>
+          <a href="index.html#beta">Beta</a>
           <a href="contact.html" style="color:var(--white);">Contact</a>
         </div>
         <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="nav-cta">Essayer gratuitement</a>
@@ -252,7 +280,7 @@
       <a href="index.html#features">Fonctionnalités</a>
       <a href="index.html#how">Comment ça marche</a>
       <a href="index.html#pricing">Tarifs</a>
-      <a href="index.html#testimonials">Témoignages</a>
+      <a href="index.html#beta">Beta</a>
       <a href="contact.html">Contact</a>
     </div>
     <div class="mobile-menu-spacer"></div>
@@ -300,7 +328,12 @@
 
       <!-- Right: Contact Form -->
       <div class="contact-form-card reveal" data-delay="150">
-        <form class="contact-form" id="contact-form" novalidate>
+        <!-- Netlify Forms: detected at deploy time through data-netlify, sent by the script below -->
+        <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden>
+            <label>Ne remplis pas ce champ : <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nom</label>
@@ -316,6 +349,7 @@
             <select id="subject" name="subject" required>
               <option value="" disabled selected>Choisis un sujet</option>
               <option value="general">Question générale</option>
+              <option value="demo">Demande de démo</option>
               <option value="bug">Signaler un bug</option>
               <option value="partenariat">Partenariat / Club</option>
               <option value="suggestion">Suggestion / Idée</option>
@@ -327,6 +361,10 @@
             <textarea id="message" name="message" placeholder="Décris ta demande..." required></textarea>
           </div>
           <button type="submit" class="cta-btn">Envoyer le message</button>
+          <div class="form-error" id="form-error" role="alert" hidden>
+            L'envoi a échoué. Réessaie dans un instant, ou écris-nous directement à
+            <a href="mailto:xav.robart@gmail.com">xav.robart@gmail.com</a>.
+          </div>
         </form>
         <div class="form-success" id="form-success">
           <div class="form-success-icon">✅</div>
@@ -353,35 +391,29 @@
           <div class="footer-col-links">
             <a href="index.html#features">Fonctionnalités</a>
             <a href="index.html#pricing">Tarifs</a>
-            <a href="#">Beta</a>
-            <a href="#">Roadmap</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer-col-title">Communauté</div>
-          <div class="footer-col-links">
-            <a href="#">Blog</a>
-            <a href="#">Discord</a>
-            <a href="#">Instagram</a>
-            <a href="#">Ambassadeurs</a>
+            <a href="https://padelia-beta.vercel.app" target="_blank" rel="noopener noreferrer">Accéder à la beta</a>
           </div>
         </div>
         <div>
           <div class="footer-col-title">Légal</div>
           <div class="footer-col-links">
-            <a href="#">CGU</a>
-            <a href="#">Confidentialité</a>
-            <a href="#">Cookies</a>
-            <a href="contact.html">Contact</a>
+            <a href="https://padelia-beta.vercel.app/cgu" target="_blank" rel="noopener noreferrer">CGU</a>
+            <a href="https://padelia-beta.vercel.app/confidentialite" target="_blank" rel="noopener noreferrer">Confidentialité</a>
+            <a href="https://padelia-beta.vercel.app/mentions-legales" target="_blank" rel="noopener noreferrer">Mentions légales</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-col-links">
+            <a href="contact.html">Nous contacter</a>
+            <a href="mailto:xav.robart@gmail.com">xav.robart@gmail.com</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Padelia. Tous droits réservés. Fait avec 💚 à Nice.</p>
+        <p>© 2026 ORIONIS. Tous droits réservés. Fait avec 💚 à Nice.</p>
         <div class="footer-socials">
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
+          <a href="mailto:xav.robart@gmail.com">Email</a>
         </div>
       </div>
       <p class="footer-publisher">
@@ -397,22 +429,56 @@
     (function() {
       var form = document.getElementById("contact-form");
       var success = document.getElementById("form-success");
+      var error = document.getElementById("form-error");
       if (!form) return;
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var submitLabel = submitBtn.textContent;
+
+      // Preselect the subject when arriving from "Demander une démo" (contact.html?sujet=demo)
+      var wanted = new URLSearchParams(window.location.search).get("sujet");
+      var subjectField = form.querySelector("#subject");
+      if (wanted) {
+        for (var i = 0; i < subjectField.options.length; i++) {
+          if (subjectField.options[i].value === wanted && !subjectField.options[i].disabled) {
+            subjectField.value = wanted;
+            break;
+          }
+        }
+      }
 
       form.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        // Basic validation
-        var name = form.querySelector("#name").value.trim();
-        var email = form.querySelector("#email").value.trim();
-        var subject = form.querySelector("#subject").value;
-        var message = form.querySelector("#message").value.trim();
+        // Validation: required fields, email format (native messages)
+        ["#name", "#email", "#message"].forEach(function(selector) {
+          var field = form.querySelector(selector);
+          field.value = field.value.trim();
+        });
+        if (!form.reportValidity()) return;
 
-        if (!name || !email || !subject || !message) return;
+        error.hidden = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours…";
 
-        // Hide form, show success
-        form.style.display = "none";
-        success.classList.add("show");
+        // Netlify Forms expects a URL-encoded POST that carries the form-name field
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function(response) {
+            if (!response.ok) throw new Error("HTTP " + response.status);
+            // Sent for real: hide form, show success
+            form.style.display = "none";
+            success.classList.add("show");
+          })
+          .catch(function() {
+            // Not sent (network error or non-2xx): keep the form and show the fallback address
+            error.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+          });
       });
     })();
   </script>

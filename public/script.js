@@ -5,6 +5,19 @@
 (function () {
   "use strict";
 
+  // ─── Demo buttons ("Voir la démo") ───
+  // Empty: the buttons scroll to the #demo-request section (demo on request).
+  // Set a video URL here and they open the video in a new tab instead.
+  const DEMO_VIDEO_URL = "";
+
+  if (DEMO_VIDEO_URL) {
+    document.querySelectorAll("[data-demo-link]").forEach(function (link) {
+      link.href = DEMO_VIDEO_URL;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+  }
+
   // ─── Navbar scroll effect ───
   const navbar = document.getElementById("navbar");
   window.addEventListener("scroll", function () {
