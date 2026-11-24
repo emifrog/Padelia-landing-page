@@ -128,6 +128,8 @@
 
   function animateCounter(el) {
     var end = parseInt(el.getAttribute("data-end"), 10);
+    // Static stats (no data-end) keep the value written in the HTML
+    if (isNaN(end)) return;
     var suffix = el.getAttribute("data-suffix") || "";
     var numberEl = el.querySelector(".number");
     var duration = 2000;
@@ -184,6 +186,7 @@
     // Fallback: show final values
     statCounters.forEach(function (el) {
       var end = parseInt(el.getAttribute("data-end"), 10);
+      if (isNaN(end)) return;
       var suffix = el.getAttribute("data-suffix") || "";
       el.querySelector(".number").textContent = end + suffix;
     });
